@@ -1,4 +1,4 @@
-require('dotenv').config();
+
 var mysql = require('mysql')
 
 const HOST = process.env.HOST
