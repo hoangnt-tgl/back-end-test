@@ -5,9 +5,10 @@ var app = express();
 
 app.use(bodyParser.json());
 
-var student = require('./routes/student');
-app.use('/student', student)
 
+var sendmail = require('./routes/send-mail');
+
+app.use('/api/send-mail', sendmail);
 app.get('/', (req, res) => {
     res.send('Hello world!')
 })
