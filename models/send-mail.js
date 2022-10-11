@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer')
 
-const EMAIL_ADDRESS = process.env.EMAIL_ADDRESS || 'hoang.nguyen@';
-const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD || 'Hog@13';
+const EMAIL_ADDRESS = process.env.EMAIL_ADDRESS || 'hoang.nguyen@glowpacific.com';
+const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD || 'matkhaunaykhongdung';
 
 var transporter = nodemailer.createTransport({
 	host: 'mail.glowpacific.com',   // hostname
