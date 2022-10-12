@@ -8,6 +8,8 @@ app.use(bodyParser.json());
 
 var product = require('./routes/product');
 var sendmail = require('./routes/send-mail');
+
+app.use('/images', express.static('images'));
 app.use('/api/send-mail', sendmail);
 app.use('/api/product', product);
 

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Product = require('../models/student');
+var Product = require('../models/product');
 
 router.get('/getall', function(req, res, next) {
     Product.getAllProduct(function(err, result){
