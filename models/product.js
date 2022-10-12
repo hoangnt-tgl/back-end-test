@@ -6,6 +6,6 @@ module.exports.getAllProduct = function(callback){
     connect.query(sql, callback);
 }
 module.exports.getProductById = function(id , callback){
-    var sql = `SELECT * from products WHERE id = ${id}`
+    var sql = `SELECT * from products WHERE idproduct = ${id}`
     connect.query(sql, callback);
 }
