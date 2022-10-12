@@ -18,28 +18,26 @@ var db_config = {
     database: DATABASE
 }
 
-var conn;
-
-function handleConnect() {
-    conn = mysql.createConnection(db_config);
+module.exports.connectDB = function (callback){
+    const conn = mysql.createConnection({
+        host: HOST,
+        user: USER,
+        password: PASS,
+        database: DATABASE
+    });
 
     conn.connect(function (err) {
         if (err) {
-            console.log('Database connection failed')
-            setTimeout(handleConnect, 2000);
+            callback(err, null)
         } else {
-            console.log('Database connection successful')
+            callback(null, conn)
         }
     })
-    conn.on('error', function (err) {
-        if (err.code === 'PROTOCOL_CONNECTION_LOST') { // Connection to the MySQL server is usually
-            handleConnect();                         // lost due to either server restart, or a
-        } else {                                      // connnection idle timeout (the wait_timeout
-            throw err;                                  // server variable configures this)
-        }
-    });
-}
-handleConnect()
 
-module.exports = conn
+}
+
+module.exports.disconnectDB = function (conn) {
+    conn.end();
+}
+
 

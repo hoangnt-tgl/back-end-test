@@ -1,11 +1,24 @@
 var express = require('express')
-var connect = require('../connect')
+var db = require('../connect')
 
 module.exports.getAllProduct = function(callback){
     var sql = `SELECT * from products`
-    connect.query(sql, callback);
+    db.connectDB(function (err, connect){
+        if (err) callback(err, null)
+        else {
+            connect.query(sql, callback);
+            db.disconnectDB(connect)
+        }
+    })
+    
 }
 module.exports.getProductById = function(id , callback){
     var sql = `SELECT * from products WHERE idproduct = ${id}`
-    connect.query(sql, callback);
+    db.connectDB(function (err, connect){
+        if (err) callback(err, null)
+        else {
+            connect.query(sql, callback);
+            db.disconnectDB(connect)
+        }
+    })
 }
