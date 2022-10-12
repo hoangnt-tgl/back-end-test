@@ -6,8 +6,10 @@ var app = express();
 app.use(bodyParser.json());
 
 
+var product = require('./routes/product');
 var sendmail = require('./routes/send-mail');
 app.use('/api/send-mail', sendmail);
+app.use('/api/product', product);
 
 app.get('/', (req, res) => {
     res.send('Hello world!')
