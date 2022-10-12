@@ -6,10 +6,10 @@ const USER = process.env.USER
 const PASS = process.env.PASS
 const DATABASE = process.env.DATABASE
 var conn = mysql.createConnection({
-    host: HOST,
-    user: USER,
-    password: PASS,
-    database: DATABASE,
+    // host: HOST,
+    // user: USER,
+    // password: PASS,
+    // database: DATABASE,
     host: "us-cdbr-east-06.cleardb.net",
     user: "b31dd452c4bb27",
     password: "fb488890",
