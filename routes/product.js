@@ -15,8 +15,8 @@ router.get('/detail/:id', function(req, res, next){
     var id = req.params.id
     Product.getProductById(id, function(err, result){
         if (err) res.status(500).json(err)
-        else if (result){
-            res.status(200).json(result)
+        else if (result.length > 0){
+            res.status(200).json(result[0])
         } else {
             res.status(404).json({message: "Not Found"})
         }
