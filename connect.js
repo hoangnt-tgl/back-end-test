@@ -17,8 +17,10 @@ var conn = mysql.createConnection({
 });
 function handleConnect() {
     conn.connect(function (err) {
-        if (err) setTimeout(handleConnect, 2000);
-        console.log("connected")
+        if (err) {
+            console.log('Database connection failed')
+            setTimeout(handleConnect, 2000);
+        }
     })
     conn.on('error', function (err) {
         console.log('db error', err);
@@ -29,7 +31,7 @@ function handleConnect() {
         }
     });
 }
-
 handleConnect()
+
 module.exports = conn
 
