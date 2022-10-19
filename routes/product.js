@@ -23,4 +23,17 @@ router.get('/detail/:id', function(req, res, next){
     })
 })
 
+router.post('/detail', function(req, res, next){
+    var code = req.params.code
+    var type = req.params.type
+    Product.getDetailProduct(code, type, function(err, result){
+        if (err) res.status(500).json(err)
+        else if (result.length > 0){
+            res.status(200).json(result[0])
+        } else {
+            res.status(404).json({message: "Not Found"})
+        }
+    })
+})
+
 module.exports = router
