@@ -22,3 +22,14 @@ module.exports.getProductById = function(id , callback){
         }
     })
 }
+
+module.exports.getDetailProduct = function(code , type, callback){
+    var sql = `SELECT * from ${type} WHERE code = '${code}'`
+    db.connectDB(function (err, connect){
+        if (err) callback(err, null)
+        else {
+            connect.query(sql, callback);
+            db.disconnectDB(connect)
+        }
+    })
+}

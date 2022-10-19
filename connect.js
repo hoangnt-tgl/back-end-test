@@ -11,13 +11,6 @@ const USER = "b31dd452c4bb27"
 const PASS = "fb488890"
 const DATABASE = "heroku_6965ea3352c823d"
 
-var db_config = {
-    host: HOST,
-    user: USER,
-    password: PASS,
-    database: DATABASE
-}
-
 module.exports.connectDB = function (callback){
     const conn = mysql.createConnection({
         host: HOST,
