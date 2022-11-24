@@ -14,10 +14,12 @@ app.use(function(req, res, next) {
 
 var product = require('./routes/product');
 var sendmail = require('./routes/send-mail');
+var payment = require('./routes/payment');
 
 app.use('/images', express.static('images'));
 app.use('/api/send-mail', sendmail);
 app.use('/api/product', product);
+app.use('/api/payment', payment);
 
 app.get('/', (req, res) => {
     res.send('Hello world!')
