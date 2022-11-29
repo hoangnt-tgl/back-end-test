@@ -1,6 +1,4 @@
 var paypal = require("paypal-rest-sdk");
-var dotenv = require("dotenv");
-dotenv.config({ path: "../.env" });
 
 const CLIENT_ID = "AWPhXSdhphH2DMvFKs_Zm-0t0w3JgbVMzTa3zk_drkDqTn7HON-eOeusZF_1dDFo5CjzIyEhFRRJCEd0";
 const CLIENT_SECRET = "EO_v73EyevkDrvxxj_VviBBR3d7UAUBDNVGX-HveijMDbI-bOb3Omkdg2OUvESDAwe5nxCl4_XL-YM-2";
