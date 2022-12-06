@@ -24,6 +24,8 @@ app.use('/api/payment', payment);
 app.get('/', (req, res) => {
     res.send('Hello world!')
 })
+
+app.get('/payment-fail', (req, res) => res.send('Cancelled'));
 var port = process.env.PORT || 3000;
 
 app.set('port', port);

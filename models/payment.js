@@ -86,6 +86,4 @@ module.exports.payment = (req, res) => {
       }
     }
   });
-
-  app.get("/payment-fail", (req, res) => res.send("Cancelled"));
 }
