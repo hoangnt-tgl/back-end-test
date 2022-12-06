@@ -18,15 +18,15 @@ module.exports.payment = (req, res) => {
       payment_method: "paypal",
     },
     redirect_urls: {
-      return_url: "http://localhost:3000/success",
-      cancel_url: "http://localhost:3000/fail",
+      return_url: "http://localhost:3000/payment-success",
+      cancel_url: "http://localhost:3000/paymet-fail",
     },
     transactions: [
       {
         item_list: {
           items: [
             {
-              name: "Red Sox Hat",
+              name: "computer components",
               sku: "001",
               price: amount,
               currency: "USD",
@@ -38,7 +38,7 @@ module.exports.payment = (req, res) => {
           currency: "USD",
           total: amount,
         },
-        description: "Hat for the best team ever",
+        description: "computer components",
       },
     ],
   };
