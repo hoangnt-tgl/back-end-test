@@ -18,8 +18,8 @@ module.exports.payment = (req, res) => {
       payment_method: "paypal",
     },
     redirect_urls: {
-      return_url: "https://curious-alfajores-803090.netlify.app/payment-success",
-      cancel_url: "https://curious-alfajores-803090.netlify.app/payment-fail",
+      return_url: "https://hcmut-tmdt.netlify.app/payment-success",
+      cancel_url: "https://hcmut-tmdt.netlify.app/payment-fail",
     },
     transactions: [
       {
