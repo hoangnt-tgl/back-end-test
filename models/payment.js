@@ -19,7 +19,7 @@ module.exports.payment = (req, res) => {
     },
     redirect_urls: {
       return_url: "http://localhost:3000/payment-success",
-      cancel_url: "http://localhost:3000/paymet-fail",
+      cancel_url: "http://localhost:3000/payment-fail",
     },
     transactions: [
       {

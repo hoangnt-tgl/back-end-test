@@ -25,8 +25,7 @@ app.get('/', (req, res) => {
     res.send('Hello world!')
 })
 
-app.get('/payment-fail', (req, res) => res.send('Cancelled'));
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3001;
 
 app.set('port', port);
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
