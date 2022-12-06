@@ -66,7 +66,6 @@ module.exports.payment = (req, res) => {
         if (error) {
           console.log(error.response);
           app.get("/payment-fail", (req, res) => res.send("Cancelled"));
-          throw error;
         } else {
           res.send("Success");
         }
@@ -77,7 +76,6 @@ module.exports.payment = (req, res) => {
   paypal.payment.create(create_payment_json, (error, payment) => {
     if (error) {
       app.get("/payment-fail", (req, res) => res.send("Cancelled"));
-      throw error;
     } else {
       for (let i = 0; i < payment.links.length; i++) {
         if (payment.links[i].rel === "approval_url") {
