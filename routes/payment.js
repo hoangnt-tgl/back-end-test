@@ -14,8 +14,8 @@ function buildRequestBody(amount) {
   return {
     "intent": 'CAPTURE',
     "application_context": {
-      "return_url": 'http://localhost:3000/payment-success',
-      "cancel_url": 'http://localhost:3000/payment-fail',
+      "return_url": 'https://hcmut-tmdt.netlify.app/payment-success',
+      "cancel_url": 'https://hcmut-tmdt.netlify.app/payment-fail',
     },
     "purchase_units": [
         {
