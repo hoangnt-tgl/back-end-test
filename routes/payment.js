@@ -21,7 +21,7 @@ function buildRequestBody(amount) {
         {
             "amount": {
                 "currency_code": "USD",
-                "value": amount.toString
+                "value": amount.toString()
             }
         }
      ],
